@@ -11,6 +11,8 @@
 		C1285B5B293B994600A001BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B5A293B994600A001BE /* ContentView.swift */; };
 		C1285B5D293B994700A001BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1285B5C293B994700A001BE /* Assets.xcassets */; };
 		C1285B60293B994700A001BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1285B5F293B994700A001BE /* Preview Assets.xcassets */; };
+		C1285B71293C6C9200A001BE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B70293C6C9200A001BE /* DetailView.swift */; };
+		C1285B74293C6CAD00A001BE /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B73293C6CAD00A001BE /* ExtensionColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		C1285B5A293B994600A001BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C1285B5C293B994700A001BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1285B5F293B994700A001BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C1285B70293C6C9200A001BE /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		C1285B73293C6CAD00A001BE /* ExtensionColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 		C1285B57293B994600A001BE /* Meat Solution */ = {
 			isa = PBXGroup;
 			children = (
+				C1285B72293C6C9A00A001BE /* Extensions */,
+				C1285B6F293C6C7F00A001BE /* Detail View */,
 				C1285B58293B994600A001BE /* Meat_SolutionApp.swift */,
 				C1285B5A293B994600A001BE /* ContentView.swift */,
 				C1285B5C293B994700A001BE /* Assets.xcassets */,
@@ -65,6 +71,22 @@
 				C1285B5F293B994700A001BE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C1285B6F293C6C7F00A001BE /* Detail View */ = {
+			isa = PBXGroup;
+			children = (
+				C1285B70293C6C9200A001BE /* DetailView.swift */,
+			);
+			path = "Detail View";
+			sourceTree = "<group>";
+		};
+		C1285B72293C6C9A00A001BE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C1285B73293C6CAD00A001BE /* ExtensionColor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1285B5B293B994600A001BE /* ContentView.swift in Sources */,
+				C1285B71293C6C9200A001BE /* DetailView.swift in Sources */,
 				C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */,
+				C1285B74293C6CAD00A001BE /* ExtensionColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
