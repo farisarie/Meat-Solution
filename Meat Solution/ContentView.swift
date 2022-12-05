@@ -12,12 +12,13 @@ struct ContentView: View {
         TabView {
             CatalogView()
                 .tabItem {
-                    Label("Katalog", systemImage: "square.stack.fill")
+                    Label("Catalog", systemImage: "square.stack.fill")
                 }
             ProfileView()
                 .tabItem {
-                    Label("Profil", systemImage: "person.fill")
+                    Label("Profile", systemImage: "person.fill")
                 }
+        }
     }
 }
 
@@ -26,3 +27,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

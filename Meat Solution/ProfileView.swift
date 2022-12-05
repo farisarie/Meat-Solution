@@ -8,30 +8,13 @@
 import SwiftUI
 
 struct ProfileView: View {
-    
     init() {
                 let navBarAppearance = UINavigationBar.appearance()
                 navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
               }
-    
+
     var body: some View {
         NavigationView {
-//            ZStack {
-//                VStack {
-//                    Image("profileHeader")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fill)
-//                        .frame(height: UIScreen.main.bounds.width * 0.7)
-//                        .clipped()
-//                    Spacer()
-//                }
-//                Image("dummyUser")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .scaleEffect(0.35)
-//
-//
-//            }
             GeometryReader { reader in
                 ZStack(alignment: .top) {
                     Image("profileHeader")
@@ -39,22 +22,25 @@ struct ProfileView: View {
                         .aspectRatio(contentMode: .fill)
                         .coordinateSpace(name: "profileHeaderBackground")
                         .frame(height: reader.size.height * (1/3), alignment: .top)
-                    
+
                         VStack {
                             Text("Meat Solution")
                                 .font(.title)
                                 .fontWeight(.bold)
-                                
+
                                 .padding(.top, 40)
                             Text(verbatim: "admin@metion.id")
                                 .font(.caption)
                                 .fontWeight(.bold)
                                 .foregroundColor(.gray)
-                            List() {
-                                HStack {
-                                    Image(systemName: "square.and.pencil")
-                                    Text("Edit profile")
+                            List {
+                                NavigationLink(destination: EditProfileView()) {
+                                    HStack {
+                                        Image(systemName: "square.and.pencil")
+                                        Text("Edit profile")
+                                    }
                                 }
+
                                 .listRowBackground(Color("profileBackgroundCard"))
                                 HStack {
                                     Image(systemName: "house.fill")
@@ -74,9 +60,9 @@ struct ProfileView: View {
                                 }
                                 .listRowSeparator(.hidden)
                                 .listRowBackground(Color("profileBackgroundCard"))
-                                
+
                             }
-                            
+
                             .listRowBackground(Color("profileBackgroundCard"))
                             .listStyle(.plain)
                         }
@@ -90,11 +76,11 @@ struct ProfileView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: reader.size.width * 1/3, alignment: .top)
                         .offset(y: reader.size.height * 1/5)
-                        
+
                     Button(action: {
                                         print("tapped!")
                                     }, label: {
-                                        Text("Keluar")
+                                        Text("Sign out")
                                             .font(.system(size: 18))
                                             .fontWeight(.bold)
                                             .foregroundColor(.red)
@@ -104,13 +90,11 @@ struct ProfileView: View {
                                             .padding()
                                     })
                     .frame(maxHeight: .infinity, alignment: .bottom)
-                    
                 }
             }
             .background(Color("profileBackground"))
             .edgesIgnoringSafeArea(.top)
             .navigationTitle("Profile")
-                
         }
     }
 }
@@ -119,7 +103,6 @@ struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ProfileView()
-                
         }
         
     }
