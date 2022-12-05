@@ -2,20 +2,22 @@
 //  ContentView.swift
 //  Meat Solution
 //
-//  Created by yoga arie on 03/12/22.
+//  Created by Erlangga Anugrah Arifin on 05/12/22.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, worlds!")
-        }
-        .padding()
+        TabView {
+            CatalogView()
+                .tabItem {
+                    Label("Katalog", systemImage: "square.stack.fill")
+                }
+            ProfileView()
+                .tabItem {
+                    Label("Profil", systemImage: "person.fill")
+                }
     }
 }
 
