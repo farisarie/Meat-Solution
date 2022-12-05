@@ -61,15 +61,14 @@
 		C1285B57293B994600A001BE /* Meat Solution */ = {
 			isa = PBXGroup;
 			children = (
+				E6534792293DD2A200EFEB91 /* Components */,
 				C1285B58293B994600A001BE /* Meat_SolutionApp.swift */,
 				C1285B5A293B994600A001BE /* ContentView.swift */,
+				E6534788293DA83900EFEB91 /* SplashscreenView.swift */,
+				E653478C293DC1BA00EFEB91 /* DashboardView.swift */,
+				E653478A293DAF3300EFEB91 /* RegisterView.swift */,
 				C1285B5C293B994700A001BE /* Assets.xcassets */,
 				C1285B5E293B994700A001BE /* Preview Content */,
-				E6534788293DA83900EFEB91 /* SplashscreenView.swift */,
-				E653478A293DAF3300EFEB91 /* RegisterView.swift */,
-				E653478C293DC1BA00EFEB91 /* DashboardView.swift */,
-				E653478E293DC2A000EFEB91 /* FavoriteScrollView.swift */,
-				E6534790293DC59000EFEB91 /* ProductScrollView.swift */,
 			);
 			path = "Meat Solution";
 			sourceTree = "<group>";
@@ -80,6 +79,15 @@
 				C1285B5F293B994700A001BE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E6534792293DD2A200EFEB91 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E653478E293DC2A000EFEB91 /* FavoriteScrollView.swift */,
+				E6534790293DC59000EFEB91 /* ProductScrollView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

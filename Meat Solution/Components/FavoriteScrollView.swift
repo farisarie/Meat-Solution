@@ -16,7 +16,7 @@ struct FavoriteScrollView: View {
                         .foregroundColor(.white)
                         .font(.largeTitle)
                         .frame(width: 360, height: 200)
-                        .background(.gray)
+                        .background(Color("Gray"))
                         .cornerRadius(20)
                 }
             }

@@ -10,7 +10,7 @@ import SwiftUI
 struct ProductScrollView: View {
     var body: some View {
         ZStack {
-            Color.gray
+            Color("Gray")
             
             ScrollView {
                 VStack {
