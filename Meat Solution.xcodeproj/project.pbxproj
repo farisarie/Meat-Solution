@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		573A2159293D9C8B0039F3EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A2158293D9C8B0039F3EE /* ContentView.swift */; };
+		573A215B293D9CF30039F3EE /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A215A293D9CF30039F3EE /* CatalogView.swift */; };
 		C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B58293B994600A001BE /* Meat_SolutionApp.swift */; };
-		C1285B5B293B994600A001BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B5A293B994600A001BE /* ContentView.swift */; };
+		C1285B5B293B994600A001BE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B5A293B994600A001BE /* ProfileView.swift */; };
 		C1285B5D293B994700A001BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1285B5C293B994700A001BE /* Assets.xcassets */; };
 		C1285B60293B994700A001BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1285B5F293B994700A001BE /* Preview Assets.xcassets */; };
 		E6534789293DA83900EFEB91 /* SplashscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6534788293DA83900EFEB91 /* SplashscreenView.swift */; };
@@ -20,9 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		573A2158293D9C8B0039F3EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		573A215A293D9CF30039F3EE /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
 		C1285B55293B994600A001BE /* Meat Solution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meat Solution.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1285B58293B994600A001BE /* Meat_SolutionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meat_SolutionApp.swift; sourceTree = "<group>"; };
-		C1285B5A293B994600A001BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C1285B5A293B994600A001BE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C1285B5C293B994700A001BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1285B5F293B994700A001BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E6534788293DA83900EFEB91 /* SplashscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashscreenView.swift; sourceTree = "<group>"; };
@@ -66,12 +70,16 @@
 				E6534793293DDB8B00EFEB91 /* Model */,
 				E6534792293DD2A200EFEB91 /* Components */,
 				C1285B58293B994600A001BE /* Meat_SolutionApp.swift */,
-				C1285B5A293B994600A001BE /* ContentView.swift */,
+
+				
 				E6534788293DA83900EFEB91 /* SplashscreenView.swift */,
 				E653478C293DC1BA00EFEB91 /* DashboardView.swift */,
 				E653478A293DAF3300EFEB91 /* RegisterView.swift */,
 				C1285B5C293B994700A001BE /* Assets.xcassets */,
 				C1285B5E293B994700A001BE /* Preview Content */,
+				573A2158293D9C8B0039F3EE /* ContentView.swift */,
+				C1285B5A293B994600A001BE /* ProfileView.swift */,
+				573A215A293D9CF30039F3EE /* CatalogView.swift */,
 			);
 			path = "Meat Solution";
 			sourceTree = "<group>";
@@ -171,14 +179,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
 				E6534789293DA83900EFEB91 /* SplashscreenView.swift in Sources */,
 				E653478F293DC2A000EFEB91 /* FavoriteScrollView.swift in Sources */,
 				E653478B293DAF3300EFEB91 /* RegisterView.swift in Sources */,
 				E6534791293DC59000EFEB91 /* ProductScrollView.swift in Sources */,
 				E653478D293DC1BA00EFEB91 /* DashboardView.swift in Sources */,
-				C1285B5B293B994600A001BE /* ContentView.swift in Sources */,
+				
 				C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */,
 				E6534795293DDBA000EFEB91 /* ProductModel.swift in Sources */,
+
+				C1285B5B293B994600A001BE /* ProfileView.swift in Sources */,
+				C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */,
+				573A215B293D9CF30039F3EE /* CatalogView.swift in Sources */,
+				573A2159293D9C8B0039F3EE /* ContentView.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +325,7 @@
 				DEVELOPMENT_TEAM = 7AS32Y773Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MetionKu;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -339,6 +355,7 @@
 				DEVELOPMENT_TEAM = 7AS32Y773Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = MetionKu;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
