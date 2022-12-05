@@ -11,13 +11,24 @@ struct FavoriteScrollView: View {
     var body: some View {
         ScrollView(.horizontal) {
             HStack(spacing: 20) {
-                ForEach(0..<3) {
-                    Text("Item \($0)")
-                        .foregroundColor(.white)
-                        .font(.largeTitle)
-                        .frame(width: 360, height: 200)
-                        .background(Color("Gray"))
-                        .cornerRadius(20)
+                ForEach(favorites, id: \.self) { favorite in
+                    NavigationLink(destination: EmptyView()) {
+                        ZStack {
+                            Image(favorite.name)
+                                .resizable()
+                                .frame(width: 350, height: 200)
+                                .cornerRadius(20)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 20)
+                                        .stroke(Color("AccentColor"), lineWidth: 3)
+                                )
+                            
+                            Text(favorite.name)
+                                .font(.title.weight(.bold))
+                                .foregroundColor(.white)
+                        }
+                        .frame(maxHeight: 206)
+                    }
                 }
             }
         }

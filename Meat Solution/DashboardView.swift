@@ -11,17 +11,17 @@ struct DashboardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text("Dashboard")
-                .font(.title.weight(.bold))
+                .font(.title.weight(.black))
                 .foregroundColor(.accentColor)
                 .padding(.vertical)
             
             Text("Produk Favorit")
-                .font(.title3.weight(.medium))
+                .font(.title3.weight(.bold))
                 .foregroundColor(.accentColor)
             FavoriteScrollView()
             
             Text("Semua Produk")
-                .font(.title3.weight(.medium))
+                .font(.title3.weight(.bold))
                 .foregroundColor(.accentColor)
             ProductScrollView()
         }

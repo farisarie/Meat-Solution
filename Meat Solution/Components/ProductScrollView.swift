@@ -10,27 +10,33 @@ import SwiftUI
 struct ProductScrollView: View {
     var body: some View {
         ZStack {
-            Color("Gray")
+            Color("AccentColor")
             
             ScrollView {
                 VStack {
-                    ForEach(0..<10) { _ in
+                    ForEach(products, id: \.self) { product in
                         ZStack {
                             Color.white
                             
                             HStack {
-                                Image(systemName: "person")
+                                Image(product.name)
                                     .resizable()
-                                    .frame(width: 95, height: 95)
+                                    .frame(width: 150, height: 100)
                                 
                                 Spacer()
                                 
-                                Text("Item")
-                                    .font(.title)
+                                VStack {
+                                    Text(product.name)
+                                        .font(.title2.weight(.bold))
+                                    
+                                    Text("Rp \(product.price)")
+                                        .foregroundColor(.accentColor)
+                                        .fontWeight(.semibold)
+                                }
                             }
                             .padding()
                         }
-                        .frame(maxWidth: .infinity, maxHeight: 101)
+                        .frame(maxWidth: .infinity, maxHeight: 170)
                         .background(.white)
                         .cornerRadius(10)
                     }
@@ -38,7 +44,7 @@ struct ProductScrollView: View {
                 .padding()
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: 350)
+        .frame(maxWidth: .infinity, maxHeight: 300)
         .cornerRadius(20)
     }
 }
