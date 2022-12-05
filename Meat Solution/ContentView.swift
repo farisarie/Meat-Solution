@@ -18,6 +18,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Profil", systemImage: "person.fill")
                 }
+        }
     }
 }
 

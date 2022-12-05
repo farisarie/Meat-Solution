@@ -11,7 +11,7 @@ import SwiftUI
 struct Meat_SolutionApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashscreenView()
         }
     }
 }
