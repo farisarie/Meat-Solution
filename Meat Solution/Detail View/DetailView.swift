@@ -8,6 +8,7 @@ struct DetailView: View {
         VStack(alignment: .leading, spacing: 15) {
             ImageView(productDetail: productDetail)
             TextView(productDetail: productDetail)
+                
             DividerView()
             Spacer()
             Button(action: {}) {
@@ -22,8 +23,9 @@ struct DetailView: View {
             .buttonStyle(.bordered)
             .foregroundColor(.white)
             .controlSize(.large)
-            .padding()
+            
         }
+        .padding(.bottom)
     }
 }
 
@@ -31,9 +33,12 @@ struct ImageView: View {
     let productDetail: Product
     var body: some View {
         ZStack {
-            Image("meat")
-                .ignoresSafeArea(.all, edges: .all)
-                .frame(width: 40, height: 40)
+            GeometryReader { geometry in
+                Image(productDetail.name)
+                    .resizable()
+                    .frame(width: UIScreen.main.bounds.size.width , height: 250)
+                    .ignoresSafeArea(.all, edges: .all)
+            }
         }
     }
 }
