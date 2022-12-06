@@ -8,10 +8,11 @@
 import Foundation
 
 enum OrderStatus: String {
-  case new
-  case approved
-  case done
-  case canceled
+  case new = "New"
+  case approved = "Approved"
+  case inProgress = "In Progress"
+  case done = "Done"
+  case canceled = "Canceled"
 }
 
 struct History: Hashable {
