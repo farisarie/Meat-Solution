@@ -8,9 +8,10 @@ struct DetailView: View {
         VStack(alignment: .leading, spacing: 15) {
             ImageView(productDetail: productDetail)
             TextView(productDetail: productDetail)
-                
+            
             DividerView()
             Spacer()
+                .frame(height: 235, alignment: .bottom)
             Button(action: {}) {
                 Text("Add To Cart")
                     .font(.system(.title2, design: .rounded))
@@ -36,7 +37,7 @@ struct ImageView: View {
             GeometryReader { geometry in
                 Image(productDetail.name)
                     .resizable()
-                    .frame(width: UIScreen.main.bounds.size.width , height: 250)
+                    .frame(width: UIScreen.main.bounds.size.width , height: 280)
                     .ignoresSafeArea(.all, edges: .all)
             }
         }
@@ -50,20 +51,14 @@ struct TextView: View {
             Text(productDetail.name)
                 .font(.title)
                 .bold()
-                .foregroundColor(Color(hex: "#AB3136"))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 25)
-            Text("COWS • RAW")
+            Text("RP \(productDetail.price)")
                 .font(.body)
-                .foregroundColor(Color(hex: "#AB3136"))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 25)
             Text(productDetail.desc)
                 .font(.callout)
-                .foregroundColor(Color(hex: "#AB3136"))
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 25)
         }
+        .foregroundColor(Color(hex: "#AB3136"))
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.leading, 25)
     }
 }
 
