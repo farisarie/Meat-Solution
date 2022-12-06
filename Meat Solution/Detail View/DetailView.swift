@@ -53,7 +53,7 @@ struct TextView: View {
                 .foregroundColor(Color(hex: "#AB3136"))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 25)
-            Text("COW • RAW")
+            Text("COWS • RAW")
                 .font(.body)
                 .foregroundColor(Color(hex: "#AB3136"))
                 .frame(maxWidth: .infinity, alignment: .leading)
