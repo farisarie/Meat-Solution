@@ -10,6 +10,9 @@
 		571928E2293F288E0089E24B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928E1293F288E0089E24B /* ViewRouter.swift */; };
 		571928E4293F28B50089E24B /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928E3293F28B50089E24B /* Page.swift */; };
 		571928E6293F29310089E24B /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928E5293F29310089E24B /* PageController.swift */; };
+		571928DB293E13760089E24B /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928DA293E13760089E24B /* EditProfileView.swift */; };
+		571928DD293E33F90089E24B /* EditAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928DC293E33F90089E24B /* EditAddressView.swift */; };
+		571928DF293EEAD00089E24B /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928DE293EEAD00089E24B /* OrderHistoryView.swift */; };
 		573A2159293D9C8B0039F3EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A2158293D9C8B0039F3EE /* ContentView.swift */; };
 		C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B58293B994600A001BE /* Meat_SolutionApp.swift */; };
 		C1285B5B293B994600A001BE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B5A293B994600A001BE /* ProfileView.swift */; };
@@ -27,6 +30,9 @@
 		571928E1293F288E0089E24B /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		571928E3293F28B50089E24B /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		571928E5293F29310089E24B /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
+		571928DA293E13760089E24B /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		571928DC293E33F90089E24B /* EditAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressView.swift; sourceTree = "<group>"; };
+		571928DE293EEAD00089E24B /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
 		573A2158293D9C8B0039F3EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C1285B55293B994600A001BE /* Meat Solution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meat Solution.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1285B58293B994600A001BE /* Meat_SolutionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meat_SolutionApp.swift; sourceTree = "<group>"; };
@@ -92,6 +98,10 @@
 				C1285B5E293B994700A001BE /* Preview Content */,
 				573A2158293D9C8B0039F3EE /* ContentView.swift */,
 				C1285B5A293B994600A001BE /* ProfileView.swift */,
+				573A215A293D9CF30039F3EE /* CatalogView.swift */,
+				571928DA293E13760089E24B /* EditProfileView.swift */,
+				571928DC293E33F90089E24B /* EditAddressView.swift */,
+				571928DE293EEAD00089E24B /* OrderHistoryView.swift */,
 			);
 			path = "Meat Solution";
 			sourceTree = "<group>";
@@ -200,9 +210,13 @@
 				E653478D293DC1BA00EFEB91 /* DashboardView.swift in Sources */,
 				C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */,
 				E6534795293DDBA000EFEB91 /* ProductModel.swift in Sources */,
+				571928DB293E13760089E24B /* EditProfileView.swift in Sources */,
+				571928DF293EEAD00089E24B /* OrderHistoryView.swift in Sources */,
 				C1285B5B293B994600A001BE /* ProfileView.swift in Sources */,
 				571928E6293F29310089E24B /* PageController.swift in Sources */,
 				C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */,
+				571928DD293E33F90089E24B /* EditAddressView.swift in Sources */,
+				573A215B293D9CF30039F3EE /* CatalogView.swift in Sources */,
 				573A2159293D9C8B0039F3EE /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,6 +362,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.farisarie.Meat-Solution";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -378,6 +395,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.farisarie.Meat-Solution";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
