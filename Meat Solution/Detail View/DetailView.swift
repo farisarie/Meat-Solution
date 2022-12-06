@@ -47,7 +47,7 @@ struct TextView: View {
                 .foregroundColor(Color(hex: "#AB3136"))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 25)
-            Text("Wagyu beef contains a higher percentage of omega-3 and omega-6 fatty acids and more monounsaturated fats than other beef. This soft fat has a low melting point and not only creates a wonderful texture but also holds most of the flavour")
+            Text("Wagyu beef contains a higher percentage of omega-3 and omega-6 fatty acids and more monounsaturated fats than other beef. This soft fat has a low melting point and not only creates a wonderful texture but also holds most of the flavours")
                 .font(.callout)
                 .foregroundColor(Color(hex: "#AB3136"))
                 .frame(maxWidth: .infinity, alignment: .leading)
