@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProfileView: View {
+    
+    @EnvironmentObject var viewRouter: ViewRouter
+    
     init() {
                 let navBarAppearance = UINavigationBar.appearance()
                 navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
@@ -77,7 +80,7 @@ struct ProfileView: View {
                         .offset(y: reader.size.height * 1/5)
 
                     Button(action: {
-                                        print("tapped!")
+                        viewRouter.currentPage = .splashScreen
                                     }, label: {
                                         Text("Sign out")
                                             .font(.system(size: 18))

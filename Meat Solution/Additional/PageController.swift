@@ -17,15 +17,14 @@ struct PageController: View {
             SplashscreenView()
                 .transition(.slide)
         case .home:
-            let _ = print("Im at home")
             TabView {
                 DashboardView()
                     .tabItem {
-                        Label("Katalog", systemImage: "square.stack.fill")
+                        Label("Catalog", systemImage: "square.stack.fill")
                     }
                 ProfileView()
                     .tabItem {
-                        Label("Profil", systemImage: "person.fill")
+                        Label("Profile", systemImage: "person.fill")
                     }
             }
             .transition(.slide)

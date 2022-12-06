@@ -25,8 +25,9 @@ struct ProductScrollView: View {
                                 
                                 Spacer()
                                 
-                                VStack {
-                                    Text(product.name)
+                                VStack(alignment: .trailing) {
+                                    Text(product.name.capitalized)
+                                        .multilineTextAlignment(.trailing)
                                         .font(.title2.weight(.bold))
                                     
                                     Text("Rp \(product.price)")
@@ -44,7 +45,7 @@ struct ProductScrollView: View {
                 .padding()
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: 300)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .cornerRadius(20)
     }
 }

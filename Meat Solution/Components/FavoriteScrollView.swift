@@ -23,7 +23,7 @@ struct FavoriteScrollView: View {
                                         .stroke(Color("AccentColor"), lineWidth: 3)
                                 )
                             
-                            Text(favorite.name)
+                            Text(favorite.name.capitalized)
                                 .font(.title.weight(.bold))
                                 .foregroundColor(.white)
                         }

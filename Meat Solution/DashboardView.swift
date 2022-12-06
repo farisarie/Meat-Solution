@@ -8,24 +8,23 @@
 import SwiftUI
 
 struct DashboardView: View {
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Dashboard")
-                .font(.title.weight(.black))
-                .foregroundColor(.accentColor)
-                .padding(.vertical)
-            
-            Text("Produk Favorit")
-                .font(.title3.weight(.bold))
-                .foregroundColor(.accentColor)
-            FavoriteScrollView()
-            
-            Text("Semua Produk")
-                .font(.title3.weight(.bold))
-                .foregroundColor(.accentColor)
-            ProductScrollView()
+        NavigationView {
+            VStack(alignment: .leading) {
+                Text("Favorite Products")
+                    .font(.title3.weight(.bold))
+                    .foregroundColor(.accentColor)
+                FavoriteScrollView()
+                
+                Text("All Products")
+                    .font(.title3.weight(.bold))
+                    .foregroundColor(.accentColor)
+                ProductScrollView()
+            }
+            .padding(.horizontal)
+            .navigationBarTitle("Dashboard", displayMode: .inline)
         }
-        .padding(.horizontal)
     }
 }
 
