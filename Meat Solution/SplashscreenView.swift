@@ -12,7 +12,6 @@ struct SplashscreenView: View {
         NavigationView {
             VStack {
                 Spacer()
-                
                 Image("Logo")
                     .resizable()
                     .scaledToFit()
@@ -43,7 +42,7 @@ struct SplashscreenView: View {
                             RoundedRectangle(cornerRadius: 16)
                                 .stroke(Color("AccentColor"), lineWidth: 3)
                         )
-                        .padding([.horizontal, .bottom])
+                  .padding([.horizontal, .bottom])
                 }
             }
         }

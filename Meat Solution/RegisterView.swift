@@ -56,6 +56,7 @@ struct RegisterView: View {
                     )
                     .padding(.bottom)
                 
+               /*
                 NavigationLink(destination: ContentView()) {
                     Text("Sign Up")
                         .font(.title2.weight(.bold))
@@ -64,6 +65,22 @@ struct RegisterView: View {
                         .background(Color("AccentColor"))
                         .cornerRadius(16)
                 }
+                */
+                Button(action: {
+                    ContentView()
+                         //
+                        }) {
+                            Text("Let's Go \(Image(systemName: "arrow.forward"))")
+                                .font(.title3)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 60)
+                                .padding(.horizontal, 100)
+                                .background(Color.blue)
+                                .cornerRadius(50)
+                        }
+                
                 
                 Spacer()
             }

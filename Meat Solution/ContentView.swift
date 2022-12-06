@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            CatalogView()
+            DashboardView()
                 .tabItem {
                     Label("Katalog", systemImage: "square.stack.fill")
                 }
