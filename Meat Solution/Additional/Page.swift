@@ -9,5 +9,6 @@ import Foundation
 
 enum Page {
     case splashScreen
+    case onBoarding
     case home
 }

@@ -80,7 +80,7 @@ struct ProfileView: View {
                         .offset(y: reader.size.height * 1/5)
 
                     Button(action: {
-                        viewRouter.currentPage = .splashScreen
+                        viewRouter.currentPage = .onBoarding
                                     }, label: {
                                         Text("Sign out")
                                             .font(.system(size: 18))

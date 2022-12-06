@@ -13,8 +13,8 @@ struct PageController: View {
     
     var body: some View {
         switch viewRouter.currentPage {
-        case .splashScreen:
-            SplashscreenView()
+        case .onBoarding:
+            OnboardingView()
                 .transition(.slide)
         case .home:
             TabView {
@@ -28,6 +28,9 @@ struct PageController: View {
                     }
             }
             .transition(.slide)
+        case .splashScreen:
+            SplashscreenView()
+                .transition(.opacity)
         }
     }
 }
