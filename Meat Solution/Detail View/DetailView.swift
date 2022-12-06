@@ -1,10 +1,13 @@
 import SwiftUI
 
 struct DetailView: View {
+    
+    let productDetail: Product
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
-            ImageView()
-            TextView()
+            ImageView(productDetail: productDetail)
+            TextView(productDetail: productDetail)
             DividerView()
             Spacer()
             Button(action: {}) {
@@ -25,18 +28,21 @@ struct DetailView: View {
 }
 
 struct ImageView: View {
+    let productDetail: Product
     var body: some View {
         ZStack {
             Image("meat")
                 .ignoresSafeArea(.all, edges: .all)
+                .frame(width: 40, height: 40)
         }
     }
 }
 
 struct TextView: View {
+    let productDetail: Product
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
-            Text("Wagyu")
+            Text(productDetail.name)
                 .font(.title)
                 .bold()
                 .foregroundColor(Color(hex: "#AB3136"))
@@ -47,7 +53,7 @@ struct TextView: View {
                 .foregroundColor(Color(hex: "#AB3136"))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 25)
-            Text("Wagyu beef contains a higher percentage of omega-3 and omega-6 fatty acids and more monounsaturated fats than other beef. This soft fat has a low melting point and not only creates a wonderful texture but also holds most of the flavours")
+            Text(productDetail.desc)
                 .font(.callout)
                 .foregroundColor(Color(hex: "#AB3136"))
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -66,6 +72,6 @@ struct DividerView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView()
+        DetailView(productDetail: Product(name: "Meat", desc: "Meatology", price: 20000))
     }
 }

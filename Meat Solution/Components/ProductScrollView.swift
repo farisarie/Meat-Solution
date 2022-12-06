@@ -15,31 +15,34 @@ struct ProductScrollView: View {
             ScrollView {
                 VStack {
                     ForEach(products, id: \.self) { product in
-                        ZStack {
-                            Color.white
-                            
-                            HStack {
-                                Image(product.name)
-                                    .resizable()
-                                    .frame(width: 150, height: 100)
+                        NavigationLink(destination: DetailView(productDetail: product)) {
+                            ZStack {
+                                Color.white
                                 
-                                Spacer()
-                                
-                                VStack(alignment: .trailing) {
-                                    Text(product.name.capitalized)
-                                        .multilineTextAlignment(.trailing)
-                                        .font(.title2.weight(.bold))
+                                HStack {
+                                    Image(product.name)
+                                        .resizable()
+                                        .frame(width: 150, height: 100)
                                     
-                                    Text("Rp \(product.price)")
-                                        .foregroundColor(.accentColor)
-                                        .fontWeight(.semibold)
+                                    Spacer()
+                                    
+                                    VStack(alignment: .trailing) {
+                                        Text(product.name.capitalized)
+                                            .multilineTextAlignment(.trailing)
+                                            .font(.title2.weight(.bold))
+                                        
+                                        Text("Rp \(product.price)")
+                                            .foregroundColor(.accentColor)
+                                            .fontWeight(.semibold)
+                                    }
                                 }
+                                .padding()
                             }
-                            .padding()
+                            
+                            .frame(maxWidth: .infinity, maxHeight: 170)
+                            .background(.white)
+                            .cornerRadius(10)
                         }
-                        .frame(maxWidth: .infinity, maxHeight: 170)
-                        .background(.white)
-                        .cornerRadius(10)
                     }
                 }
                 .padding()

@@ -12,7 +12,7 @@ struct FavoriteScrollView: View {
         ScrollView(.horizontal) {
             HStack(spacing: 20) {
                 ForEach(favorites, id: \.self) { favorite in
-                    NavigationLink(destination: EmptyView()) {
+                    NavigationLink(destination: DetailView(productDetail: favorite)) {
                         ZStack {
                             Image(favorite.name)
                                 .resizable()
