@@ -11,6 +11,7 @@ struct RegisterView: View {
     @State private var fullname: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
+    @EnvironmentObject var viewRouter: ViewRouter
     
     var body: some View {
         NavigationView {
@@ -67,18 +68,17 @@ struct RegisterView: View {
                 }
                 */
                 Button(action: {
-                    ContentView()
+                    withAnimation() {
+                        viewRouter.currentPage = .home
+                    }
                          //
                         }) {
-                            Text("Let's Go \(Image(systemName: "arrow.forward"))")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .frame(height: 60)
-                                .padding(.horizontal, 100)
-                                .background(Color.blue)
-                                .cornerRadius(50)
+                            Text("Sign Up")
+                                                   .font(.title2.weight(.bold))
+                                                   .foregroundColor(.white)
+                                                   .frame(maxWidth: .infinity, maxHeight: 54)
+                                                   .background(Color("AccentColor"))
+                                                   .cornerRadius(16)
                         }
                 
                 

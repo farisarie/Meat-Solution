@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SplashscreenView: View {
+
     var body: some View {
         NavigationView {
             VStack {
