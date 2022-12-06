@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct Meat_SolutionApp: App {
+    
+    @StateObject var viewRouter = ViewRouter()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            PageController()
+                .environmentObject(viewRouter)
         }
     }
 }
