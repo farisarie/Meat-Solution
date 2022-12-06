@@ -29,6 +29,7 @@ struct ProfileView: View {
                                 .fontWeight(.bold)
 
                                 .padding(.top, 40)
+                            
                             Text(verbatim: "admin@metion.id")
                                 .font(.caption)
                                 .fontWeight(.bold)
@@ -37,37 +38,35 @@ struct ProfileView: View {
                                 NavigationLink(destination: EditProfileView()) {
                                     HStack {
                                         Image(systemName: "square.and.pencil")
-                                        Text("Edit profile")
+                                        Text("Edit Profile")
                                     }
                                 }
-
                                 .listRowBackground(Color("profileBackgroundCard"))
-                                HStack {
-                                    Image(systemName: "house.fill")
-                                    Text("Edit address")
+                                NavigationLink(destination: EditAddressView()) {
+                                    HStack {
+                                        Image(systemName: "house.fill")
+                                        Text("Edit Address")
+                                    }
                                 }
+                                
                                 .listRowSeparator(.hidden)
                                 .listRowBackground(Color("profileBackgroundCard"))
-                                HStack {
-                                    Image(systemName: "heart.fill")
-                                    Text("Favorites")
-                                }
-                                .listRowSeparator(.hidden)
-                                .listRowBackground(Color("profileBackgroundCard"))
-                                HStack {
-                                    Image(systemName: "tray.fill")
-                                    Text("Order history")
+                                NavigationLink(destination: OrderHistoryView()) {
+                                    HStack {
+                                        Image(systemName: "tray.fill")
+                                        Text("Order History")
+                                    }
                                 }
                                 .listRowSeparator(.hidden)
                                 .listRowBackground(Color("profileBackgroundCard"))
 
                             }
-
+                            .padding(.bottom, 10)
                             .listRowBackground(Color("profileBackgroundCard"))
                             .listStyle(.plain)
                         }
                         .environment(\.defaultMinListRowHeight, reader.size.height * (1/15))
-                        .frame(width: reader.size.width * 0.9, height: reader.size.height * (4/10))
+                        .frame(width: reader.size.width * 0.9, height: reader.size.height * (4/12.5))
                         .background(Color("profileBackgroundCard"))
                         .cornerRadius(20)
                         .offset(y: reader.size.height * 0.33)

@@ -16,47 +16,54 @@ struct EditProfileView: View {
     @Environment(\.presentationMode) var presentationMode
 
     init() {
-                let navBarAppearance = UINavigationBar.appearance()
-                navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-              }
-    
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
+    }
+
     var body: some View {
-//        NavigationView {
-              VStack {
-                Form {
-                    Section(header: Text("User photo"), footer: Text("Password field must be 8 characters or exceed to save.")) {
-                      Image("dummyUser")
+        VStack {
+            Form {
+                Section(header: Text("User photo"), footer: Text("Password field must be 8 characters or exceed to save.")) {
+                    Image("dummyUser")
                             .frame(maxWidth: .infinity, alignment: .center)
                             .listRowBackground(Color.clear)
-                        Text("Choose Photo")
-                        Text("Delete Photo")
+                    Text("Choose Photo")
+                    Text("Delete Photo")
                             .foregroundColor(.red)
-                    }
-                    
-                  Section(header: Text("User detail"), footer: Text("")) {
+                }
+
+                Section(header: Text("User detail"), footer: Text("")) {
                     TextField("Fullname", text: $fullname)
                     TextField("Email", text: $email)
                     SecureField("Password", text: $password)
-                  }
-                  Section {
-                    Button("Save") {
-                        let _ = print("Saved!")
-//                      Profile.saveProfile(username: username, fullname: fullname, job: job)
-//                      presentationMode.wrappedValue.dismiss()
-                    }
-                    .disabled(countText(fullnameCount: 2, emailCount: 5, passwordCount: 8))
-                  }
                 }
-                        .onAppear {
+            }
+                    .onAppear {
 //                          getProfile()
-                            UITableViewCell.appearance().backgroundColor = UIColor.clear
+                        UITableViewCell.appearance().backgroundColor = UIColor.clear
+                    }
+                    .safeAreaInset(edge: .bottom, spacing: 0) {
+                        ZStack {
+                            Button(action: {
+                                // save action
+                                  presentationMode.wrappedValue.dismiss()
+                            }, label: {
+                                Text("Save")
+                                .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 10/190)
+                                .background(.green)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                            })
                         }
-                  
-              }
-//                      .navigationTitle("Edit Profile")
-//                      .navigationViewStyle(.stack)
-              .navigationBarTitle("Edit Profile", displayMode: .inline)
-                      
+                        .frame(height: UIScreen.main.bounds.height * 1/10)
+                        .frame(maxWidth: .infinity)
+                        .background(Color("profileBackground"))
+                        .fontWeight(.bold)
+                    }
+        }
+                .navigationBarTitle("Edit Profile", displayMode: .inline)
+
 //            }
     }
 
