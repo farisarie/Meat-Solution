@@ -14,6 +14,8 @@ struct LoginView: View {
     @State private var wrongPassword: Float  = 0
     @State private var showingLoginScreen = false
     
+    @EnvironmentObject var viewRouter: ViewRouter
+    
     
     var body: some View {
         NavigationView {
@@ -49,16 +51,12 @@ struct LoginView: View {
                         .border(.red, width: CGFloat(wrongPassword))
                     
                     Button("Login") {
-                        authenticateUser(username: username, password: password)
+                        viewRouter.currentPage = .home
                         }
                     .foregroundColor(.white)
                     .frame(width: 300, height: 50)
                     .background(Color.accentColor)
                     .cornerRadius(10)
-                    
-                    NavigationLink(destination: Text("You are logged in @\(username)"), isActive: $showingLoginScreen) {
-                        EmptyView()
-                    }
                 }
             }.navigationBarHidden(true)
         }

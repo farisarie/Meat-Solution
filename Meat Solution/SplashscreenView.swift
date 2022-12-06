@@ -24,7 +24,7 @@ struct SplashscreenView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: EmptyView()) {
+                NavigationLink(destination: LoginView()) {
                     Text("Login")
                         .font(.title2.weight(.bold))
                         .foregroundColor(.white)
@@ -43,6 +43,7 @@ struct SplashscreenView: View {
                             RoundedRectangle(cornerRadius: 16)
                                 .stroke(Color("AccentColor"), lineWidth: 3)
                         )
+                    
                   .padding([.horizontal, .bottom])
                 }
             }
