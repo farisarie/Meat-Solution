@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct CardView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  
+  let order = histories.first
+  
+  var body: some View {
+    VStack (alignment: .leading){
+      HStack {
+        Image(systemName: "bag.fill")
+          .font(.title)
+          .padding(0)
+        Text(String(order?.id ?? "").prefix(120))
+          .font(.headline)
+          .padding(.trailing, 10)
+        StatusChipView(status: .inProgress)
+          .font(.caption)
+      }
     }
+    .padding()
+  }
 }
 
 struct CardView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardView()
-    }
+  static var previews: some View {
+    CardView()
+      .background(.thinMaterial)
+      .previewLayout(.fixed(width: 400, height: 80))
+  }
 }

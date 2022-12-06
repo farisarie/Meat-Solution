@@ -16,7 +16,7 @@ enum OrderStatus: String {
 }
 
 struct History: Hashable {
-  let id: UUID
+  let id: String
   let items: [Product]
   let courier: String
   let status: OrderStatus
@@ -24,7 +24,7 @@ struct History: Hashable {
 
 let histories: [History] = [
   History(
-    id: UUID(),
+    id: UUID().uuidString,
     items: [
       Product(name: "Beef Patty", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 50000),
       Product(name: "ShortplateAUS", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 100000),
@@ -33,7 +33,7 @@ let histories: [History] = [
     courier: "J&T",
     status: .new),
   History(
-    id: UUID(),
+    id: UUID().uuidString,
     items: [
       Product(name: "Iga Premium", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 150000),
       Product(name: "Iga Tulang", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 75000),
@@ -45,7 +45,7 @@ let histories: [History] = [
     courier: "J&T",
     status: .approved),
   History(
-    id: UUID(),
+    id: UUID().uuidString,
     items: [
       Product(name: "Beef Patty", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 50000),
       Product(name: "Beef Slice", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 40000),
