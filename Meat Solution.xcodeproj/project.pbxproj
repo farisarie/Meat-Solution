@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		573A2159293D9C8B0039F3EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A2158293D9C8B0039F3EE /* ContentView.swift */; };
 		573A215B293D9CF30039F3EE /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A215A293D9CF30039F3EE /* CatalogView.swift */; };
+		BF08123B293EF79E00FE3DEB /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08123A293EF79E00FE3DEB /* CardView.swift */; };
+		BF08123D293EF91F00FE3DEB /* StatusChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08123C293EF91F00FE3DEB /* StatusChipView.swift */; };
+		BF08123F293F7EAE00FE3DEB /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF08123E293F7EAE00FE3DEB /* HistoryView.swift */; };
+		BF532E422940A2E800BEB4EA /* HistoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF532E412940A2E800BEB4EA /* HistoryDetailView.swift */; };
+		BF990D14293E6AAA00E849AD /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF990D13293E6AAA00E849AD /* HistoryModel.swift */; };
+		BF9F75942941085A009B5A41 /* ProductItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9F75932941085A009B5A41 /* ProductItemView.swift */; };
 		C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B58293B994600A001BE /* Meat_SolutionApp.swift */; };
 		C1285B5B293B994600A001BE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B5A293B994600A001BE /* ProfileView.swift */; };
 		C1285B5D293B994700A001BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1285B5C293B994700A001BE /* Assets.xcassets */; };
@@ -24,6 +30,12 @@
 /* Begin PBXFileReference section */
 		573A2158293D9C8B0039F3EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		573A215A293D9CF30039F3EE /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
+		BF08123A293EF79E00FE3DEB /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		BF08123C293EF91F00FE3DEB /* StatusChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChipView.swift; sourceTree = "<group>"; };
+		BF08123E293F7EAE00FE3DEB /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		BF532E412940A2E800BEB4EA /* HistoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailView.swift; sourceTree = "<group>"; };
+		BF990D13293E6AAA00E849AD /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		BF9F75932941085A009B5A41 /* ProductItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductItemView.swift; sourceTree = "<group>"; };
 		C1285B55293B994600A001BE /* Meat Solution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meat Solution.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1285B58293B994600A001BE /* Meat_SolutionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meat_SolutionApp.swift; sourceTree = "<group>"; };
 		C1285B5A293B994600A001BE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -67,11 +79,11 @@
 		C1285B57293B994600A001BE /* Meat Solution */ = {
 			isa = PBXGroup;
 			children = (
+				BF08123E293F7EAE00FE3DEB /* HistoryView.swift */,
+				BF532E412940A2E800BEB4EA /* HistoryDetailView.swift */,
 				E6534793293DDB8B00EFEB91 /* Model */,
 				E6534792293DD2A200EFEB91 /* Components */,
 				C1285B58293B994600A001BE /* Meat_SolutionApp.swift */,
-
-				
 				E6534788293DA83900EFEB91 /* SplashscreenView.swift */,
 				E653478C293DC1BA00EFEB91 /* DashboardView.swift */,
 				E653478A293DAF3300EFEB91 /* RegisterView.swift */,
@@ -97,6 +109,9 @@
 			children = (
 				E653478E293DC2A000EFEB91 /* FavoriteScrollView.swift */,
 				E6534790293DC59000EFEB91 /* ProductScrollView.swift */,
+				BF08123A293EF79E00FE3DEB /* CardView.swift */,
+				BF08123C293EF91F00FE3DEB /* StatusChipView.swift */,
+				BF9F75932941085A009B5A41 /* ProductItemView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -105,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				E6534794293DDBA000EFEB91 /* ProductModel.swift */,
+				BF990D13293E6AAA00E849AD /* HistoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,21 +195,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				E6534789293DA83900EFEB91 /* SplashscreenView.swift in Sources */,
 				E653478F293DC2A000EFEB91 /* FavoriteScrollView.swift in Sources */,
+				BF532E422940A2E800BEB4EA /* HistoryDetailView.swift in Sources */,
+				BF08123D293EF91F00FE3DEB /* StatusChipView.swift in Sources */,
 				E653478B293DAF3300EFEB91 /* RegisterView.swift in Sources */,
+				BF9F75942941085A009B5A41 /* ProductItemView.swift in Sources */,
 				E6534791293DC59000EFEB91 /* ProductScrollView.swift in Sources */,
 				E653478D293DC1BA00EFEB91 /* DashboardView.swift in Sources */,
-				
 				C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */,
+				BF08123F293F7EAE00FE3DEB /* HistoryView.swift in Sources */,
 				E6534795293DDBA000EFEB91 /* ProductModel.swift in Sources */,
-
+				BF08123B293EF79E00FE3DEB /* CardView.swift in Sources */,
 				C1285B5B293B994600A001BE /* ProfileView.swift in Sources */,
+				BF990D14293E6AAA00E849AD /* HistoryModel.swift in Sources */,
 				C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */,
 				573A215B293D9CF30039F3EE /* CatalogView.swift in Sources */,
 				573A2159293D9C8B0039F3EE /* ContentView.swift in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

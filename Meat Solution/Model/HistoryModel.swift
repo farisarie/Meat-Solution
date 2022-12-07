@@ -15,25 +15,29 @@ enum OrderStatus: String {
   case canceled = "Canceled"
 }
 
-struct History: Hashable {
+struct History: Hashable, Identifiable {
   let id: String
   let items: [Product]
   let courier: String
   let status: OrderStatus
+  
+  var totalPrice: Int {
+    return items.map({ $0.price }).reduce(0, +)
+  }
 }
 
 let histories: [History] = [
   History(
-    id: UUID().uuidString,
+    id: "CMASDJNF3839FN32D9",
     items: [
       Product(name: "Beef Patty", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 50000),
-      Product(name: "ShortplateAUS", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 100000),
+      Product(name: "shortplateAUS", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 100000),
       Product(name: "Iga Tulang", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 75000)
     ],
     courier: "J&T",
     status: .new),
   History(
-    id: UUID().uuidString,
+    id: "SDF83DJWQ9CN8WBFNF",
     items: [
       Product(name: "Iga Premium", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 150000),
       Product(name: "Iga Tulang", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 75000),
@@ -42,16 +46,16 @@ let histories: [History] = [
       Product(name: "Paru", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 45000),
       Product(name: "Rendang Chill", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 70000)
     ],
-    courier: "J&T",
+    courier: "JNE",
     status: .approved),
   History(
-    id: UUID().uuidString,
+    id: "9FH38WNCEMCW9M3NF4",
     items: [
       Product(name: "Beef Patty", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 50000),
       Product(name: "Beef Slice", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 40000),
       Product(name: "Blade", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 100000),
       Product(name: "Brisket", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 80000)
     ],
-    courier: "J&T",
-    status: .new),
+    courier: "Si Cepat",
+    status: .canceled),
 ]
