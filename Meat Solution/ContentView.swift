@@ -9,16 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            CatalogView()
-                .tabItem {
-                    Label("Katalog", systemImage: "square.stack.fill")
-                }
-            ProfileView()
-                .tabItem {
-                    Label("Profil", systemImage: "person.fill")
-                }
-        }
+        Text("Hello worldss")
     }
 }
 
@@ -27,3 +18,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+

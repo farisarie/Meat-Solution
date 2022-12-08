@@ -12,7 +12,7 @@ struct FavoriteScrollView: View {
         ScrollView(.horizontal) {
             HStack(spacing: 20) {
                 ForEach(favorites, id: \.self) { favorite in
-                    NavigationLink(destination: EmptyView()) {
+                    NavigationLink(destination: DetailView(productDetail: favorite)) {
                         ZStack {
                             Image(favorite.name)
                                 .resizable()
@@ -23,7 +23,7 @@ struct FavoriteScrollView: View {
                                         .stroke(Color("AccentColor"), lineWidth: 3)
                                 )
                             
-                            Text(favorite.name)
+                            Text(favorite.name.capitalized)
                                 .font(.title.weight(.bold))
                                 .foregroundColor(.white)
                         }
