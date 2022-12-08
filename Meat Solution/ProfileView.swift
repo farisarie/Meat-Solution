@@ -54,7 +54,7 @@ struct ProfileView: View {
                                 
                                 .listRowSeparator(.hidden)
                                 .listRowBackground(Color("profileBackgroundCard"))
-                                NavigationLink(destination: OrderHistoryView()) {
+                                NavigationLink(destination: HistoryView()) {
                                     HStack {
                                         Image(systemName: "tray.fill")
                                         Text("Order History")

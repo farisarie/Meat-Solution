@@ -40,7 +40,20 @@ struct HistoryDetailView: View {
           .fontWeight(.semibold)
         }
         
-        // TODO: Create Courier Information
+        // MARK: Courier Information Section
+        Section(header: Text("Courier Information")) {
+          Label {
+            Text(history.courier)
+          } icon: {
+            Image(systemName: "box.truck.fill")
+          }
+          
+          Label {
+            Text("(+021) 123 4567")
+          } icon: {
+            Image(systemName: "phone.fill")
+          }
+        }
       }
     }
     .padding(8)
