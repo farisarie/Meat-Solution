@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570318612940EC780011364E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570318602940EC780011364E /* UserSettings.swift */; };
 		571928DB293E13760089E24B /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928DA293E13760089E24B /* EditProfileView.swift */; };
 		571928DD293E33F90089E24B /* EditAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928DC293E33F90089E24B /* EditAddressView.swift */; };
 		571928DF293EEAD00089E24B /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928DE293EEAD00089E24B /* OrderHistoryView.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570318602940EC780011364E /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		571928DA293E13760089E24B /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		571928DC293E33F90089E24B /* EditAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressView.swift; sourceTree = "<group>"; };
 		571928DE293EEAD00089E24B /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				571928E1293F288E0089E24B /* ViewRouter.swift */,
 				571928E3293F28B50089E24B /* Page.swift */,
 				571928E5293F29310089E24B /* PageController.swift */,
+				570318602940EC780011364E /* UserSettings.swift */,
 			);
 			path = Additional;
 			sourceTree = "<group>";
@@ -139,7 +142,7 @@
 				C1285B73293C6CAD00A001BE /* ExtensionColor.swift */,
 			);
 			path = Extensions;
-      sourceTree = "<group>";
+			sourceTree = "<group>";
 		};
 		E6534792293DD2A200EFEB91 /* Components */ = {
 			isa = PBXGroup;
@@ -228,7 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C1285B5B293B994600A001BE /* ContentView.swift in Sources */,
+				C1285B5B293B994600A001BE /* ProfileView.swift in Sources */,
 				C1285B71293C6C9200A001BE /* DetailView.swift in Sources */,
 				C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */,
 				C1285B74293C6CAD00A001BE /* ExtensionColor.swift in Sources */,
@@ -243,6 +246,7 @@
 				C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */,
 				E6534795293DDBA000EFEB91 /* ProductModel.swift in Sources */,
 				571928DB293E13760089E24B /* EditProfileView.swift in Sources */,
+				570318612940EC780011364E /* UserSettings.swift in Sources */,
 				CDF672A0293F3F20000ADC25 /* LoginView.swift in Sources */,
 				571928DF293EEAD00089E24B /* OrderHistoryView.swift in Sources */,
 				C1285B5B293B994600A001BE /* ProfileView.swift in Sources */,

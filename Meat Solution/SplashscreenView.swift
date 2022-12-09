@@ -23,7 +23,7 @@ struct SplashscreenView: View {
     }
     
     private func delaySplashscreen() async {
-            try? await Task.sleep(nanoseconds: 2_000_000_000)
+            try? await Task.sleep(nanoseconds: 200_000_000)
         timeSplashscreen = true
         withAnimation {
             viewRouter.currentPage = .onBoarding

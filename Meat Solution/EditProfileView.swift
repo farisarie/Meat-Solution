@@ -12,40 +12,32 @@ struct EditProfileView: View {
     @State var email = ""
     @State var password = ""
     @State private var isShowingAlert = false
+    @EnvironmentObject var userSettings: UserSettings
+    
 
     @Environment(\.presentationMode) var presentationMode
 
-    init() {
-        let navBarAppearance = UINavigationBar.appearance()
-        navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-    }
+
 
     var body: some View {
         VStack {
             Form {
-                Section(header: Text("User photo"), footer: Text("Password field must be 8 characters or exceed to save.")) {
-                    Image("dummyUser")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                            .listRowBackground(Color.clear)
-                    Text("Choose Photo")
-                    Text("Delete Photo")
-                            .foregroundColor(.red)
-                }
 
-                Section(header: Text("User detail"), footer: Text("")) {
+                Section(header: Text("User detail"), footer: Text("Password field must be 8 characters or exceed to save.")) {
                     TextField("Fullname", text: $fullname)
                     TextField("Email", text: $email)
                     SecureField("Password", text: $password)
+                    let _ = print(fullname)
                 }
             }
                     .onAppear {
 //                          getProfile()
-                        UITableViewCell.appearance().backgroundColor = UIColor.clear
+
                     }
                     .safeAreaInset(edge: .bottom, spacing: 0) {
                         ZStack {
                             Button(action: {
-                                // save action
+                                UserSettings.setUser(fullname: fullname, email: email, password: password)
                                   presentationMode.wrappedValue.dismiss()
                             }, label: {
                                 Text("Save")
@@ -62,6 +54,10 @@ struct EditProfileView: View {
                         .fontWeight(.bold)
                     }
         }
+        .onAppear {
+            let _ = print("EdProf Called!")
+            getProfile()
+        }
                 .navigationBarTitle("Edit Profile", displayMode: .inline)
 
 //            }
@@ -73,6 +69,11 @@ struct EditProfileView: View {
         } else {
             return true
         }
+    }
+    
+    func getProfile() {
+        fullname = UserDefaults.standard.string(forKey: "userFullname") ?? "User"
+        email = UserDefaults.standard.string(forKey: "userEmail") ?? "user@email.com"
     }
 }
 
