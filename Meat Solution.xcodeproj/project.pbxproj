@@ -16,6 +16,7 @@
 		571928E6293F29310089E24B /* PageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928E5293F29310089E24B /* PageController.swift */; };
 		573A2159293D9C8B0039F3EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573A2158293D9C8B0039F3EE /* ContentView.swift */; };
 		579D095C293F70B600EC0FAA /* SplashscreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579D095B293F70B600EC0FAA /* SplashscreenView.swift */; };
+		57E2158A29438D740084E1DB /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E2158929438D740084E1DB /* CheckoutView.swift */; };
 		C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B58293B994600A001BE /* Meat_SolutionApp.swift */; };
 		C1285B5B293B994600A001BE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1285B5A293B994600A001BE /* ProfileView.swift */; };
 		C1285B5D293B994700A001BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1285B5C293B994700A001BE /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		571928E5293F29310089E24B /* PageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageController.swift; sourceTree = "<group>"; };
 		573A2158293D9C8B0039F3EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		579D095B293F70B600EC0FAA /* SplashscreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashscreenView.swift; sourceTree = "<group>"; };
+		57E2158929438D740084E1DB /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 		C1285B55293B994600A001BE /* Meat Solution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meat Solution.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1285B58293B994600A001BE /* Meat_SolutionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meat_SolutionApp.swift; sourceTree = "<group>"; };
 		C1285B5A293B994600A001BE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				571928DE293EEAD00089E24B /* OrderHistoryView.swift */,
 				CDF6729F293F3F20000ADC25 /* LoginView.swift */,
 				579D095B293F70B600EC0FAA /* SplashscreenView.swift */,
+				57E2158929438D740084E1DB /* CheckoutView.swift */,
 			);
 			path = "Meat Solution";
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				E653478D293DC1BA00EFEB91 /* DashboardView.swift in Sources */,
 				C1285B59293B994600A001BE /* Meat_SolutionApp.swift in Sources */,
 				E6534795293DDBA000EFEB91 /* ProductModel.swift in Sources */,
+				57E2158A29438D740084E1DB /* CheckoutView.swift in Sources */,
 				571928DB293E13760089E24B /* EditProfileView.swift in Sources */,
 				570318612940EC780011364E /* UserSettings.swift in Sources */,
 				CDF672A0293F3F20000ADC25 /* LoginView.swift in Sources */,

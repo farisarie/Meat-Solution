@@ -3,7 +3,7 @@ import SwiftUI
 struct DetailView: View {
     
     let productDetail: Product
-    @State private var checkoutForm = false
+    
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
 
     var body: some View {
@@ -21,21 +21,14 @@ struct DetailView: View {
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 ZStack {
                     NavigationLink(
-                        destination: EmptyView()) {
-                                              Text("Buy now")
+                        destination: CheckoutView(productDetail: productDetail)) {
+                                              Text("\(Image(systemName: "cart")) Buy Now")
                                                       .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 10/190)
                                                       .background(Color(hex: "#AB3136"))
                                                       .cornerRadius(10)
                                                       .foregroundColor(.white)
                                                       .fontWeight(.bold)
                                     }
-
-
-                    Button(action: {
-                        // next view
-                    }, label: {
-
-                    })
                 }
                 .frame(height: UIScreen.main.bounds.height * 1/10)
                 .frame(maxWidth: .infinity)

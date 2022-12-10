@@ -103,7 +103,9 @@ struct AddressForm: View {
                 email = UserDefaults.standard.string(forKey: "recEmail") ?? ""
                 phone = UserDefaults.standard.string(forKey: "recPhone") ?? ""
                 
-                address = UserDefaults.standard.string(forKey: "recAddress") ?? ""
+                address = UserDefaults.standard.string(forKey: "desAddress") ?? ""
+                city = UserDefaults.standard.string(forKey: "desCity") ?? ""
+                postcode = UserDefaults.standard.string(forKey: "desPostal") ?? ""
             }
 
         }

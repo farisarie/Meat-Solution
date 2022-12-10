@@ -9,21 +9,12 @@ import Foundation
 
 class UserSettings: ObservableObject {
 
-//    @Published var userFullname = UserDefaults.standard.string(forKey: "userFullname")
-//    @Published var userEmail = UserDefaults.standard.string(forKey: "userEmail")
-//    @Published var userPassword = UserDefaults.standard.string(forKey: "userPassword")
-//    @Published var userPhone = UserDefaults.standard.string(forKey: "userPhone")
-//    
-    
-
     static func setUser(fullname: String, email: String, password: String, phoneNum: String = "") {
         print("Fullname:\(fullname)\nEmail:\(email)")
         UserDefaults.standard.set(fullname, forKey: "userFullname")
         UserDefaults.standard.set(email, forKey: "userEmail")
         UserDefaults.standard.set(password, forKey: "userPassword")
     }
-
-
 
     static func setDeliverTo(recName: String, recEmail: String, recPhone: String, address: String, city: String, postal: String) {
         UserDefaults.standard.set(recName, forKey: "recName")
@@ -32,8 +23,6 @@ class UserSettings: ObservableObject {
         UserDefaults.standard.set(address, forKey: "desAddress")
         UserDefaults.standard.set(city, forKey: "desCity")
         UserDefaults.standard.set(postal, forKey: "desPostal")
-        
-        let _ = print(UserDefaults.standard.string(forKey: "recName")!)
     }
 
     static func getDeliverTo() {
@@ -41,7 +30,6 @@ class UserSettings: ObservableObject {
         _ = UserDefaults.standard.string(forKey: "desCity")
         _ = UserDefaults.standard.string(forKey: "desPostal")
     }
-
 
     static func resetAll() {
         UserDefaults.standard.removeObject(forKey: "userFullname")
