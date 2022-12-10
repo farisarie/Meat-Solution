@@ -24,17 +24,16 @@ struct PaymentView: View {
                                 .resizable()
                                 .frame(width: 40, height: 40)
                                 .padding(.horizontal, 25)
-                                .foregroundColor(isClicked && selectedPayment == payment.paymentMethod ? Color("AccentColor"): Color.secondary)
                             
                             Spacer()
                             
                             Text(payment.paymentMethod)
                                 .font(.headline.weight(.regular))
-                                .foregroundColor(isClicked && selectedPayment == payment.paymentMethod ? Color("AccentColor"): Color.secondary)
                             
                             Spacer()
                             Spacer()
                         }
+                        .foregroundColor(isClicked && selectedPayment == payment.paymentMethod ? Color("AccentColor"): Color.secondary)
                         .frame(maxWidth: .infinity, maxHeight: 70)
                         .overlay(
                             RoundedRectangle(cornerRadius: 8)
