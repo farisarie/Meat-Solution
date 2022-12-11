@@ -28,9 +28,7 @@ struct HistoryDetailView: View {
         .padding(.leading, 8)
       List {
         Section(header: Text("Order Items")) {
-          ForEach(history.items, id: \.self) { product in
-            ProductItemView(product: product)
-          }
+          ProductItemView(product: history)
           HStack {
             Text("Total")
             Spacer()
@@ -38,6 +36,25 @@ struct HistoryDetailView: View {
           }
           .foregroundColor(.accentColor)
           .fontWeight(.semibold)
+        }
+        
+        // MARK: Send
+        Section(header: Text("Delivery Details")) {
+          Label {
+            Text(UserDefaults.standard.string(forKey: "desAddress") ?? "Jl Jati Mataram No. 277")
+          } icon: {
+            Image(systemName: "house.fill")
+          }
+          Label {
+            Text(UserDefaults.standard.string(forKey: "desCity") ?? "Jakarta Selatan")
+          } icon: {
+            Image(systemName: "location.fill")
+          }
+          Label {
+            Text(UserDefaults.standard.string(forKey: "desPostal") ?? "12345")
+          } icon: {
+            Image(systemName: "signpost.right.fill")
+          }
         }
         
         // MARK: Courier Information Section

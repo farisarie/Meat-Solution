@@ -45,7 +45,7 @@ struct PaymentView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: OrderHistoryView()) {
+                NavigationLink(destination: HistoryView()) {
                     Text("Process to Payment")
                         .font(.title3.weight(.bold))
                         .foregroundColor(.white)
