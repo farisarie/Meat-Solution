@@ -4,61 +4,71 @@ struct DetailView: View {
     
     let productDetail: Product
     
-    var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
-            ImageView(productDetail: productDetail)
-            TextView(productDetail: productDetail)
-            
-            DividerView()
-            Spacer()
-                .frame(height: 235, alignment: .bottom)
-            Button(action: {}) {
-                Text("Add To Cart")
-                    .font(.system(.title2, design: .rounded))
-                    .fontWeight(.bold)
-            }
-            .background(Color(hex: "#AB3136"))
-            .cornerRadius(20)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 110)
-            .buttonStyle(.bordered)
-            .foregroundColor(.white)
-            .controlSize(.large)
-            
-        }
-        .padding(.bottom)
-    }
-}
+    @Environment(\.presentationMode) var mode: Binding<PresentationMode>
 
-struct ImageView: View {
-    let productDetail: Product
     var body: some View {
-        ZStack {
-            GeometryReader { geometry in
+//        NavigationView {
+            VStack(alignment: .leading) {
                 Image(productDetail.name)
                     .resizable()
                     .frame(width: UIScreen.main.bounds.size.width , height: 280)
-                    .ignoresSafeArea(.all, edges: .all)
+                        .background(Color(hex: "#AB3136"))
+
+                TextView(productDetail: productDetail)
+                let _ = print("\(productDetail.name)\n\(productDetail.price)\n\(productDetail.desc)\n\n")
+                Spacer()
             }
-        }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                ZStack {
+                    NavigationLink(
+                        destination: CheckoutView(productDetail: productDetail)) {
+                                              Text("\(Image(systemName: "cart")) Buy Now")
+                                                      .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 10/190)
+                                                      .background(Color(hex: "#AB3136"))
+                                                      .cornerRadius(10)
+                                                      .foregroundColor(.white)
+                                                      .fontWeight(.bold)
+                                    }
+                }
+                .frame(height: UIScreen.main.bounds.height * 1/10)
+                .frame(maxWidth: .infinity)
+
+                .fontWeight(.bold)
+            }
+            .edgesIgnoringSafeArea(.top)
+//            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+                        .navigationBarItems(leading: Button(action : {
+                            self.mode.wrappedValue.dismiss()
+                        }){
+                            Circle()
+                                .fill(Color.white)
+                                .frame(width: UIScreen.main.bounds.width * 0.1)
+                                .overlay(Image(systemName: "arrow.left"))
+                                .foregroundColor(Color(hex: "#AB3136"))
+                        })
+//        }
     }
 }
+
 
 struct TextView: View {
     let productDetail: Product
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
-            Text(productDetail.name)
+            Text(productDetail.name.capitalized)
                 .font(.title)
                 .bold()
-            Text("RP \(productDetail.price)")
+            Text("Rp \(productDetail.price)")
                 .font(.body)
+                .padding(.top, -10)
+            DividerView()
             Text(productDetail.desc)
                 .font(.callout)
         }
         .foregroundColor(Color(hex: "#AB3136"))
         .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.leading, 25)
+        .padding(.horizontal, 25)
     }
 }
 
@@ -66,12 +76,12 @@ struct DividerView: View {
     var body: some View {
         Divider()
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.leading, 25)
+
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(productDetail: Product(name: "Meat", desc: "Meatology", price: 20000))
+        DetailView(productDetail: Product(name: "chuck", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 20000))
     }
 }

@@ -1,5 +1,5 @@
 //
-//  OrderHistoryVIew.swift
+//  OrderHistoryView.swift
 //  Meat Solution
 //
 //  Created by Erlangga Anugrah Arifin on 06/12/22.
@@ -19,7 +19,6 @@ struct OrderHistoryView: View {
                             .padding(.horizontal, 10)
                             .padding(.vertical, 5)
                             .foregroundColor(.white)
-                            .frame(width: .infinity)
                             .background(.green)
                             .cornerRadius(20)
                     }

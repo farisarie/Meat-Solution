@@ -10,16 +10,48 @@ import SwiftUI
 struct EditAddressView: View {
 
     @Environment(\.presentationMode) var presentationMode
+//    @State var address = AddressForm()
+    @State var fullname = ""
+    @State var email = ""
+    @State var phone = ""
+    @State var address = ""
+    @State var city = ""
+    @State var postcode = ""
 
     var body: some View {
 
             VStack(spacing: 0) {
-                AddressForm()
+//                AddressForm()
+                Form {
+                    Section(header: Text("Recipient"), footer: Text("")) {
+                        TextField("Fullname", text: $fullname)
+                        TextField("Email", text: $email)
+                        TextField("Phone Number", text: $phone)
+                    }
+                    Section(header: Text("Deliver to")) {
+                        TextField("Address", text: $address)
+                        TextField("City", text: $city)
+                        TextField("Postal Code", text: $postcode)
+                    }
+                    
+                    .onAppear {
+                        fullname = UserDefaults.standard.string(forKey: "recName") ?? ""
+                        email = UserDefaults.standard.string(forKey: "recEmail") ?? ""
+                        phone = UserDefaults.standard.string(forKey: "recPhone") ?? ""
+                        
+                        address = UserDefaults.standard.string(forKey: "desAddress") ?? ""
+                        city = UserDefaults.standard.string(forKey: "desCity") ?? ""
+                        postcode = UserDefaults.standard.string(forKey: "desPostal") ?? ""
+                    }
+
+                }
+                
+//                let _ = print(address.fullname)
             }
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 ZStack {
                     Button(action: {
-                        // save action
+                        UserSettings.setDeliverTo(recName: fullname, recEmail: email, recPhone: phone, address: phone, city: city, postal: postcode)
                           presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Text("Save")
@@ -46,12 +78,12 @@ struct EditAddressView: View {
 
 struct AddressForm: View {
     
-    @State private var fullname = ""
-    @State private var email = ""
-    @State private var phone = ""
-    @State private var address = ""
-    @State private var city = ""
-    @State private var postcode = ""
+    @State var fullname = ""
+    @State var email = ""
+    @State var phone = ""
+    @State var address = ""
+    @State var city = ""
+    @State var postcode = ""
     
     var body: some View {
         Form {
@@ -64,6 +96,16 @@ struct AddressForm: View {
                 TextField("Address", text: $address)
                 TextField("City", text: $city)
                 TextField("Postal Code", text: $postcode)
+            }
+            
+            .onAppear {
+                fullname = UserDefaults.standard.string(forKey: "recName") ?? ""
+                email = UserDefaults.standard.string(forKey: "recEmail") ?? ""
+                phone = UserDefaults.standard.string(forKey: "recPhone") ?? ""
+                
+                address = UserDefaults.standard.string(forKey: "desAddress") ?? ""
+                city = UserDefaults.standard.string(forKey: "desCity") ?? ""
+                postcode = UserDefaults.standard.string(forKey: "desPostal") ?? ""
             }
 
         }
