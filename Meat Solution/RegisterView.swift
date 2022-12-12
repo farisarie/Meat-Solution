@@ -11,6 +11,7 @@ struct RegisterView: View {
     @State private var fullname: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
+//  @State private var passwordCount = 0
     @EnvironmentObject var viewRouter: ViewRouter
     
     var body: some View {
@@ -21,10 +22,11 @@ struct RegisterView: View {
                     .foregroundColor(.accentColor)
                     .padding(.vertical)
                 
-                Text("FULL NAME")
-                    .font(.caption.weight(.semibold))
+              Text("Full name".uppercased())
+                .font(.subheadline.weight(.semibold))
                     .foregroundColor(.accentColor)
                 TextField("", text: $fullname)
+                .textInputAutocapitalization(.words)
                     .frame(maxWidth: .infinity, maxHeight: 51)
                     .cornerRadius(6)
                     .overlay(
@@ -33,10 +35,11 @@ struct RegisterView: View {
                     )
                     .padding(.bottom)
                 
-                Text("E-MAIL")
-                    .font(.caption.weight(.semibold))
+              Text("Email".uppercased())
+                .font(.subheadline.weight(.semibold))
                     .foregroundColor(.accentColor)
                 TextField("", text: $email)
+                .textInputAutocapitalization(.never)
                     .frame(maxWidth: .infinity, maxHeight: 51)
                     .cornerRadius(6)
                     .overlay(
@@ -45,8 +48,8 @@ struct RegisterView: View {
                     )
                     .padding(.bottom)
                 
-                Text("PASSWORD")
-                    .font(.caption.weight(.semibold))
+              Text("Password".uppercased())
+                .font(.subheadline.weight(.semibold))
                     .foregroundColor(.accentColor)
                 SecureField("", text: $password)
                     .frame(maxWidth: .infinity, maxHeight: 51)
@@ -55,31 +58,24 @@ struct RegisterView: View {
                         RoundedRectangle(cornerRadius: 6)
                             .stroke(Color("AccentColor"), lineWidth: 1)
                     )
+              Text("Password field must be at least 8 characters.")
+                .font(.footnote)
+                .foregroundColor(.accentColor)
                     .padding(.bottom)
-                
-               /*
-                NavigationLink(destination: ContentView()) {
-                    Text("Sign Up")
-                        .font(.title2.weight(.bold))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, maxHeight: 54)
-                        .background(Color("AccentColor"))
-                        .cornerRadius(16)
-                }
-                */
                 Button(action: {
                     withAnimation() {
-                        viewRouter.currentPage = .home
-                    }
-                         //
+                      UserSettings.setUser(fullname: fullname, email: email, password: password)
+                      viewRouter.currentPage = .home
+                  }
                         }) {
                             Text("Sign Up")
                                                    .font(.title2.weight(.bold))
                                                    .foregroundColor(.white)
                                                    .frame(maxWidth: .infinity, maxHeight: 54)
-                                                   .background(Color("AccentColor"))
+                                                   .background((fullname != "") && (email != "") && (password.count >= 8) ?  Color("AccentColor") : .gray)
                                                    .cornerRadius(16)
                         }
+                        .disabled((fullname != "") && (email != "") && (password.count >= 8) ? false : true)
                 
                 
                 Spacer()

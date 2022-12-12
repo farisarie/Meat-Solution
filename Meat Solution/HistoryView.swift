@@ -12,7 +12,7 @@ struct HistoryView: View {
   var body: some View {
     
     // MARK: - Order Navigation View
-    NavigationView {
+    
       ScrollView {
         VStack {
           Section {
@@ -29,7 +29,6 @@ struct HistoryView: View {
       }
       .navigationTitle("Order History")
       .navigationBarTitleDisplayMode(.inline)
-    }
   }
 }
 

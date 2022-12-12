@@ -10,9 +10,9 @@ import SwiftUI
 struct PaymentView: View {
     @State private var selectedPayment: String = ""
     @State private var isClicked: Bool = false
-    
+  @State private var alert = false
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     var body: some View {
-        NavigationView {
             VStack(alignment: .leading){
                 ForEach(payments, id: \.self) { payment in
                     Button() {
@@ -42,21 +42,36 @@ struct PaymentView: View {
                         .padding(.horizontal)
                     }
                 }
-                
                 Spacer()
-                
-                NavigationLink(destination: HistoryView()) {
-                    Text("Process to Payment")
-                        .font(.title3.weight(.bold))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity, maxHeight: 54)
-                        .background(Color("AccentColor"))
-                        .cornerRadius(16)
-                        .padding(.horizontal)
+            }
+            .navigationTitle("Payment Method")
+            .alert(isPresented: $alert) {
+              Alert(
+                title: Text("Success"),
+                message: Text("Thank you for shopping at Meat Solution!"),
+                dismissButton: .default(Text("Ok"))
+              )
+            }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            ZStack {
+                Button(action: {
+                  alert.toggle()
+                    NavigationUtil.popToRootView()
+                }) {
+                    
+                                              Text("Place Order")
+                                                      .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 10/190)
+                                                      .background(selectedPayment != "" ? Color("AccentColor") : Color.gray)
+                                                      .cornerRadius(10)
+                                                      .foregroundColor(.white)
+                                                      .fontWeight(.bold)
                 }
             }
-            .navigationTitle("Payment")
-            .navigationBarTitleDisplayMode(.inline)
+            .disabled(selectedPayment == "" ? true : false)
+            .frame(height: UIScreen.main.bounds.height * 1/10)
+            .frame(maxWidth: .infinity)
+
+            .fontWeight(.bold)
         }
     }
 }
