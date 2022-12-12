@@ -10,7 +10,7 @@ import SwiftUI
 struct StatusChipView: View {
   let status: OrderStatus
   var color: Color {
-    switch self.status {
+    switch status {
     case .new:
       return .gray
     case .canceled:
@@ -21,14 +21,14 @@ struct StatusChipView: View {
       return .yellow
     }
   }
-  
+
   var body: some View {
     Text(status.rawValue)
-      .font(.caption)
-      .bold()
-      .padding(6)
-      .background(color)
-      .cornerRadius(8)
+        .font(.caption)
+        .bold()
+        .padding(6)
+        .background(color)
+        .cornerRadius(8)
   }
 }
 

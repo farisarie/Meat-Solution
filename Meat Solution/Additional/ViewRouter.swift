@@ -8,5 +8,5 @@
 import SwiftUI
 
 class ViewRouter: ObservableObject {
-    @Published var currentPage: Page = .splashScreen
+  @Published var currentPage: Page = .splashScreen
 }
