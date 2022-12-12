@@ -15,7 +15,7 @@ struct Meat_SolutionApp: App {
   var body: some Scene {
     WindowGroup {
       PageController()
-          .environmentObject(viewRouter)
+        .environmentObject(viewRouter)
     }
   }
 }

@@ -24,11 +24,11 @@ struct StatusChipView: View {
 
   var body: some View {
     Text(status.rawValue)
-        .font(.caption)
-        .bold()
-        .padding(6)
-        .background(color)
-        .cornerRadius(8)
+      .font(.caption)
+      .bold()
+      .padding(6)
+      .background(color)
+      .cornerRadius(8)
   }
 }
 

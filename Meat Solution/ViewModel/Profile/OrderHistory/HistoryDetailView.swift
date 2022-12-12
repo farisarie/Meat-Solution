@@ -14,18 +14,18 @@ struct HistoryDetailView: View {
     VStack(alignment: .leading) {
       HStack {
         Text("You are currently viewing order")
-            .font(.callout)
-            .bold()
-            .padding(8)
+          .font(.callout)
+          .bold()
+          .padding(8)
         Spacer()
         StatusChipView(status: history.status)
-            .padding(.trailing, 8)
+          .padding(.trailing, 8)
       }
       Text("\(history.id)")
-          .font(.title2)
-          .bold()
-          .foregroundColor(.accentColor)
-          .padding(.leading, 8)
+        .font(.title2)
+        .bold()
+        .foregroundColor(.accentColor)
+        .padding(.leading, 8)
       List {
         Section(header: Text("Order Items")) {
           ProductItemView(product: history)
@@ -34,8 +34,8 @@ struct HistoryDetailView: View {
             Spacer()
             Text("Rp \(history.totalPrice)")
           }
-              .foregroundColor(.accentColor)
-              .fontWeight(.semibold)
+            .foregroundColor(.accentColor)
+            .fontWeight(.semibold)
         }
         Section(header: Text("Delivery Details")) {
           Label {
@@ -67,8 +67,10 @@ struct HistoryDetailView: View {
           }
         }
       }
+        .listStyle(.plain)
     }
-        .padding(8)
+      .padding(8)
+      .navigationBarTitle("Order Detail", displayMode: .inline)
   }
 }
 

@@ -15,10 +15,10 @@ struct SplashscreenView: View {
 
   var body: some View {
     Image("Logo")
-        .resizable()
-        .scaledToFill()
-        .frame(width: 200, height: 200)
-        .task(delaySplashscreen)
+      .resizable()
+      .scaledToFill()
+      .frame(width: 200, height: 200)
+      .task(delaySplashscreen)
   }
 
   private func delaySplashscreen() async {

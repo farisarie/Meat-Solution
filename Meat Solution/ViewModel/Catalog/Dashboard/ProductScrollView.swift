@@ -19,31 +19,31 @@ struct ProductScrollView: View {
                 Color.white
                 HStack {
                   Image(product.name)
-                      .resizable()
-                      .frame(width: 150, height: 100)
+                    .resizable()
+                    .frame(width: 150, height: 100)
                   Spacer()
                   VStack(alignment: .trailing) {
                     Text(product.name.capitalized)
-                        .multilineTextAlignment(.trailing)
-                        .font(.title2.weight(.bold))
+                      .multilineTextAlignment(.trailing)
+                      .font(.title2.weight(.bold))
                     Text("Rp \(product.price)")
-                        .foregroundColor(.accentColor)
-                        .fontWeight(.semibold)
+                      .foregroundColor(.accentColor)
+                      .fontWeight(.semibold)
                   }
                 }
-                    .padding()
+                  .padding()
               }
-                  .frame(maxWidth: .infinity, maxHeight: 170)
-                  .background(.white)
-                  .cornerRadius(10)
+                .frame(maxWidth: .infinity, maxHeight: 170)
+                .background(.white)
+                .cornerRadius(10)
             }
           }
         }
-            .padding()
+          .padding()
       }
     }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .cornerRadius(20)
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .cornerRadius(20)
   }
 }
 

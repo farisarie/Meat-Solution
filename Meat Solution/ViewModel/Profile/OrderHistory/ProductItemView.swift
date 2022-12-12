@@ -14,18 +14,18 @@ struct ProductItemView: View {
   var body: some View {
     HStack {
       Image(product.items.name)
-          .resizable()
-          .frame(width: 120, height: 80)
+        .resizable()
+        .frame(width: 120, height: 80)
       VStack(alignment: .leading) {
         Text(product.items.name)
-            .font(.headline.weight(.bold))
+          .font(.headline.weight(.bold))
         Spacer()
         HStack {
           Text("Rp \(product.items.price)")
           Text("x\(product.qty)")
         }
-            .foregroundColor(.accentColor)
-            .fontWeight(.semibold)
+          .foregroundColor(.accentColor)
+          .fontWeight(.semibold)
       }
     }
   }
@@ -34,6 +34,6 @@ struct ProductItemView: View {
 struct ProductItemView_Previews: PreviewProvider {
   static var previews: some View {
     ProductItemView(product: (histories.first)!)
-        .previewLayout(.fixed(width: 250, height: 80))
+      .previewLayout(.fixed(width: 250, height: 80))
   }
 }

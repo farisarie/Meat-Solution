@@ -16,15 +16,15 @@ struct HistoryView: View {
           ForEach(histories) { history in
             NavigationLink(destination: HistoryDetailView(history: history)) {
               CardView(history: history)
-                  .foregroundColor(.primary)
+                .foregroundColor(.primary)
             }
           }
         }
       }
-          .frame(maxWidth: .infinity)
+        .frame(maxWidth: .infinity)
     }
-        .navigationTitle("Order History")
-        .navigationBarTitleDisplayMode(.inline)
+      .navigationTitle("Order History")
+      .navigationBarTitleDisplayMode(.inline)
   }
 }
 

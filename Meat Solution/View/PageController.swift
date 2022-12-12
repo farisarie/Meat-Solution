@@ -15,22 +15,22 @@ struct PageController: View {
     switch viewRouter.currentPage {
     case .onBoarding:
       OnboardingView()
-          .transition(.slide)
+        .transition(.slide)
     case .home:
       TabView {
         DashboardView()
-            .tabItem {
-              Label("Catalog", systemImage: "square.stack.fill")
-            }
+          .tabItem {
+            Label("Catalog", systemImage: "square.stack.fill")
+          }
         ProfileView()
-            .tabItem {
-              Label("Profile", systemImage: "person.fill")
-            }
+          .tabItem {
+            Label("Profile", systemImage: "person.fill")
+          }
       }
-          .transition(.slide)
+        .transition(.slide)
     case .splashScreen:
       SplashscreenView()
-          .transition(.opacity)
+        .transition(.opacity)
     }
   }
 }
@@ -38,6 +38,6 @@ struct PageController: View {
 struct PageController_Previews: PreviewProvider {
   static var previews: some View {
     PageController()
-        .environmentObject(ViewRouter())
+      .environmentObject(ViewRouter())
   }
 }

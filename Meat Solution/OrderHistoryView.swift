@@ -27,7 +27,7 @@ struct OrderHistoryView: View {
           .environment(\.defaultMinListRowHeight, reader.size.height * (1 / 15))
     }
         .listStyle(.plain)
-        .navigationBarTitle("Order History", displayMode: .inline)
+        
   }
 }
 
