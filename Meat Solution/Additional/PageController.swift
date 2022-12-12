@@ -8,36 +8,36 @@
 import SwiftUI
 
 struct PageController: View {
-    
-    @EnvironmentObject var viewRouter: ViewRouter
-    
-    var body: some View {
-        switch viewRouter.currentPage {
-        case .onBoarding:
-            OnboardingView()
-                .transition(.slide)
-        case .home:
-            TabView {
-                DashboardView()
-                    .tabItem {
-                        Label("Catalog", systemImage: "square.stack.fill")
-                    }
-                ProfileView()
-                    .tabItem {
-                        Label("Profile", systemImage: "person.fill")
-                    }
+
+  @EnvironmentObject var viewRouter: ViewRouter
+
+  var body: some View {
+    switch viewRouter.currentPage {
+    case .onBoarding:
+      OnboardingView()
+          .transition(.slide)
+    case .home:
+      TabView {
+        DashboardView()
+            .tabItem {
+              Label("Catalog", systemImage: "square.stack.fill")
             }
-            .transition(.slide)
-        case .splashScreen:
-            SplashscreenView()
-                .transition(.opacity)
-        }
+        ProfileView()
+            .tabItem {
+              Label("Profile", systemImage: "person.fill")
+            }
+      }
+          .transition(.slide)
+    case .splashScreen:
+      SplashscreenView()
+          .transition(.opacity)
     }
+  }
 }
 
 struct PageController_Previews: PreviewProvider {
-    static var previews: some View {
-        PageController()
-            .environmentObject(ViewRouter())
-    }
+  static var previews: some View {
+    PageController()
+        .environmentObject(ViewRouter())
+  }
 }

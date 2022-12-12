@@ -8,7 +8,7 @@
 import Foundation
 
 enum Page {
-    case splashScreen
-    case onBoarding
-    case home
+  case splashScreen
+  case onBoarding
+  case home
 }
