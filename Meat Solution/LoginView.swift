@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var username = ""
+    @State private var email = ""
     @State private var password = ""
     @State private var wrongUsername: Float = 0
     @State private var wrongPassword: Float  = 0
@@ -35,7 +35,8 @@ struct LoginView: View {
                         .bold()
                         .padding()
                     
-                    TextField("Username", text: $username)
+                    TextField("Email", text: $email)
+                    .textInputAutocapitalization(.never)
                         .padding()
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
@@ -50,13 +51,20 @@ struct LoginView: View {
                         .cornerRadius(10)
                         .border(.red, width: CGFloat(wrongPassword))
                     
-                    Button("Login") {
-                        viewRouter.currentPage = .home
-                        }
-                    .foregroundColor(.white)
-                    .frame(width: 300, height: 50)
-                    .background(Color.accentColor)
-                    .cornerRadius(10)
+                  Button(action: {
+                    withAnimation {
+                      UserSettings.setUser(fullname: "", email: email, password: password)
+                      viewRouter.currentPage = .home
+                    }
+                  }){
+                      Text("Login")
+                        .foregroundColor(.white)
+                        .frame(width: 300, height: 50)
+                        .background((email != "") && (password.count >= 8) ?  Color("AccentColor") : .gray)
+                        .cornerRadius(10)
+                    }
+                  .disabled((email != "") && (password.count >= 8) ?  false : true)
+                    
                 }
             }.navigationBarHidden(true)
         }

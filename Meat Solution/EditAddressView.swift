@@ -25,13 +25,19 @@ struct EditAddressView: View {
                 Form {
                     Section(header: Text("Recipient"), footer: Text("")) {
                         TextField("Fullname", text: $fullname)
+                        .textInputAutocapitalization(.words)
                         TextField("Email", text: $email)
+                        .textInputAutocapitalization(.never)
                         TextField("Phone Number", text: $phone)
+                        .keyboardType(.phonePad)
                     }
                     Section(header: Text("Deliver to")) {
                         TextField("Address", text: $address)
+                        .textInputAutocapitalization(.words)
                         TextField("City", text: $city)
+                        .textInputAutocapitalization(.words)
                         TextField("Postal Code", text: $postcode)
+                        .keyboardType(.numberPad)
                     }
                     
                     .onAppear {
@@ -89,8 +95,11 @@ struct AddressForm: View {
         Form {
             Section(header: Text("Recipient"), footer: Text("")) {
                 TextField("Fullname", text: $fullname)
+                .textInputAutocapitalization(.words)
                 TextField("Email", text: $email)
+                .textInputAutocapitalization(.never)
                 TextField("Phone Number", text: $phone)
+                .keyboardType(.phonePad)
             }
             Section(header: Text("Deliver to")) {
                 TextField("Address", text: $address)

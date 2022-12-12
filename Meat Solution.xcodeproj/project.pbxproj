@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		570318612940EC780011364E /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570318602940EC780011364E /* UserSettings.swift */; };
+		570691B82945E69700FD56FF /* BackToRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570691B72945E69700FD56FF /* BackToRoot.swift */; };
 		571928DB293E13760089E24B /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928DA293E13760089E24B /* EditProfileView.swift */; };
 		571928DD293E33F90089E24B /* EditAddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928DC293E33F90089E24B /* EditAddressView.swift */; };
 		571928DF293EEAD00089E24B /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571928DE293EEAD00089E24B /* OrderHistoryView.swift */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		570318602940EC780011364E /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		570691B72945E69700FD56FF /* BackToRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackToRoot.swift; sourceTree = "<group>"; };
 		571928DA293E13760089E24B /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		571928DC293E33F90089E24B /* EditAddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddressView.swift; sourceTree = "<group>"; };
 		571928DE293EEAD00089E24B /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				571928E3293F28B50089E24B /* Page.swift */,
 				571928E5293F29310089E24B /* PageController.swift */,
 				570318602940EC780011364E /* UserSettings.swift */,
+				570691B72945E69700FD56FF /* BackToRoot.swift */,
 			);
 			path = Additional;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				BF532E422940A2E800BEB4EA /* HistoryDetailView.swift in Sources */,
 				BF08123D293EF91F00FE3DEB /* StatusChipView.swift in Sources */,
 				E653478B293DAF3300EFEB91 /* RegisterView.swift in Sources */,
+				570691B82945E69700FD56FF /* BackToRoot.swift in Sources */,
 				BF9F75942941085A009B5A41 /* ProductItemView.swift in Sources */,
 				C1285B5B293B994600A001BE /* ProfileView.swift in Sources */,
 				C1285B71293C6C9200A001BE /* DetailView.swift in Sources */,

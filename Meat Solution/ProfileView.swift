@@ -11,7 +11,7 @@ struct ProfileView: View {
     
     @EnvironmentObject var viewRouter: ViewRouter
     
-//    @StateObject var userSettings = UserSettings()
+  @State private var confirmationDialog = false
     @State private var email = ""
     @State private var fullname = ""
 
@@ -57,7 +57,7 @@ struct ProfileView: View {
 
                                     .listRowSeparator(.hidden)
                                     .listRowBackground(Color("profileBackgroundCard"))
-                            NavigationLink(destination: OrderHistoryView()) {
+                            NavigationLink(destination: HistoryView()) {
                                 HStack {
                                     Image(systemName: "tray.fill")
                                     Text("Order History")
@@ -83,8 +83,7 @@ struct ProfileView: View {
                             .offset(y: reader.size.height * 1/5)
 
                     Button(action: {
-                        viewRouter.currentPage = .onBoarding
-                        UserSettings.resetAll()
+                      confirmationDialog.toggle()
                     }, label: {
                         Text("Sign out")
                                 .font(.system(size: 18))
@@ -101,6 +100,16 @@ struct ProfileView: View {
             .background(Color("profileBackground"))
             .edgesIgnoringSafeArea(.top)
             .navigationTitle("Profile")
+            .confirmationDialog("Log out?", isPresented: $confirmationDialog) {
+              Button("Log out", role: .destructive) {
+                withAnimation {
+                  viewRouter.currentPage = .onBoarding
+                }
+                UserSettings.resetAll()
+              }
+            } message: {
+              Text("Current session will be deleted, continue?")
+            }
                     .onAppear {
                         navigationBarWhite()
                         fullname = UserDefaults.standard.string(forKey: "userFullname") ?? ""

@@ -20,19 +20,36 @@ struct CheckoutView: View {
     @State var input = ""
     @State private var selectedMeat = 0
     @State private var selectedPacking = 0
+    @State private var selectedCourier = "JNE"
     let meatOptions = ["Potong Kecil", "Potong Dadu", "Tanpa Potong"]
     let packingOptions = ["Vakum Plastik", "Tray Styrofoam Wrap", "Tray Mika Wrap", "Tray Mika Vakum", "Plastik Tanpa Vakum"]
-    
-    
-//    @State var price = 30000
+    let courierChoices = ["JNE": 35_000, "JNT": 37_000, "SiCepat": 30_000, "Wahana": 33_000, "Pos Indonesia": 36_000, "Ninja Express": 32_000, "TIKI": 38_000]
     let productDetail: Product
 
     
     var body: some View {
-//        ScrollView(.vertical) {
-//                AddressForm()
-                
             Form {
+                Section(header: Text("Recipient"), footer: Text("")) {
+                    TextField("Fullname", text: $fullname)
+                    .textInputAutocapitalization(.words)
+                    TextField("Email", text: $email)
+                    .textInputAutocapitalization(.never)
+                    TextField("Phone Number", text: $phone)
+                    .keyboardType(.phonePad)
+                }
+                Section(header: Text("Deliver to")) {
+                    TextField("Address", text: $address)
+                    .textInputAutocapitalization(.words)
+                    TextField("City", text: $city)
+                    .textInputAutocapitalization(.words)
+                    TextField("Postal Code", text: $postcode)
+                    .keyboardType(.numberPad)
+                    Picker(selection: $selectedCourier, label: Text("Courier")) {
+                        ForEach(courierChoices.keys.sorted(), id: \.self) { courier in
+                            Text(courier).tag(courier)
+                        }
+                    }
+                }
                 Section(header: Text("Your Order")) {
                     VStack {
                         HStack {
@@ -47,7 +64,6 @@ struct CheckoutView: View {
                                         .lineLimit(2)
                                         .fontWeight(.bold)
                                 Text("Rp \(productDetail.price)")
-
                             }
                             Spacer()
                             HStack {
@@ -59,16 +75,12 @@ struct CheckoutView: View {
                                                 }
                                             }
                                         }
-
                                         .frame(width: 30)
                                         .textFieldStyle(.roundedBorder)
                                         .keyboardType(.numberPad)
-
-
                                 Stepper("", value: $quantity, in: 1...12)
                                         .fixedSize()
                             }
-
                         }
                     }
                     Picker("Tipe kemasan", selection: $selectedPacking) {
@@ -92,7 +104,7 @@ struct CheckoutView: View {
                             HStack {
                                 Text("Ongkos kirim")
                                 Spacer()
-                                Text("Rp 0")
+                                Text("Rp \(courierChoices[selectedCourier] ?? 0)")
                             }
                             HStack {
                                 Text("Biaya administrasi")
@@ -104,7 +116,7 @@ struct CheckoutView: View {
                                     .font(.title3)
                                     .fontWeight(.bold)
                                 Spacer()
-                                Text("Rp \(productDetail.price * quantity + 1_000)")
+                                Text("Rp \((productDetail.price * quantity) + (courierChoices[selectedCourier] ?? 0) + 1_000)")
                                     .font(.title3)
                                     .fontWeight(.bold)
                             }
@@ -112,25 +124,11 @@ struct CheckoutView: View {
                         
                     }
                 }
-                
-                Section(header: Text("Recipient"), footer: Text("")) {
-                    TextField("Fullname", text: $fullname)
-                    TextField("Email", text: $email)
-                    TextField("Phone Number", text: $phone)
-                }
-                Section(header: Text("Deliver to")) {
-                    TextField("Address", text: $address)
-                    TextField("City", text: $city)
-                    TextField("Postal Code", text: $postcode)
-                }
-                
-                
-
             }
             .safeAreaInset(edge: .bottom, spacing: 0) {
                 ZStack {
                     NavigationLink(
-                        destination: EmptyView()) {
+                        destination: PaymentView()) {
                                               Text("Select Payment \(Image(systemName: "arrow.right"))")
                                                       .frame(width: UIScreen.main.bounds.width * 0.9, height: UIScreen.main.bounds.height * 10/190)
                                                       .background(Color(hex: "#AB3136"))
@@ -139,17 +137,15 @@ struct CheckoutView: View {
                                                       .fontWeight(.bold)
                                     }
                 }
+                .onTapGesture {
+                  UserSettings.setDeliverTo(recName: fullname, recEmail: email, recPhone: phone, address: phone, city: city, postal: postcode)
+                }
                 .frame(height: UIScreen.main.bounds.height * 1/10)
                 .frame(maxWidth: .infinity)
                 .background(Color("profileBackground"))
 
                 .fontWeight(.bold)
             }
-            
-            
-            
-//                let _ = print(address.fullname)
-//        }
         .onAppear {
             UITableView.appearance().backgroundColor = .clear
             fullname = UserDefaults.standard.string(forKey: "recName") ?? ""
@@ -160,19 +156,13 @@ struct CheckoutView: View {
             city = UserDefaults.standard.string(forKey: "desCity") ?? ""
             postcode = UserDefaults.standard.string(forKey: "desPostal") ?? ""
         }
-//        .onReceive(quantity) { newValue in
-//            if newValue > "10" {
-//                quantity = "1"
-//            }
-//        }
-        
         .navigationTitle("Checkout")
     }
-    
+
 }
 
 struct CheckoutView_Previews: PreviewProvider {
     static var previews: some View {
-        CheckoutView(productDetail: Product(name: "Testing", desc: "Lorem ipsum", price: 50_000))
+      CheckoutView(productDetail: Product(id: 1,name: "Beef Patty", desc: "Lorem ipsum", price: 10000000))
     }
 }

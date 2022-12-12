@@ -63,8 +63,11 @@ struct TextView: View {
                 .font(.body)
                 .padding(.top, -10)
             DividerView()
+          ScrollView(.vertical) {
             Text(productDetail.desc)
-                .font(.callout)
+              .font(.callout)
+          }
+            
         }
         .foregroundColor(Color(hex: "#AB3136"))
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -82,6 +85,6 @@ struct DividerView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(productDetail: Product(name: "chuck", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 20000))
+      DetailView(productDetail: Product(id: 1, name: "chuck", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", price: 20000))
     }
 }
